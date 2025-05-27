@@ -1,0 +1,41 @@
+{
+	"name": "@trippnology/mcp-server-hello-world",
+	"version": "0.1.0",
+	"description": "A NodeJS implementation of a Model Context Protocol (MCP) Hello World server, primarily intended for testing and development purposes.",
+	"main": "stdio-server.js",
+	"engines": {
+		"node": ">=16.0.0"
+	},
+	"scripts": {
+		"start": "node stdio-server.js",
+		"start:http": "node http-server.js",
+		"test": "mocha test/**/*.test.js"
+	},
+	"dependencies": {
+		"@hapi/hapi": "21.3.2"
+	},
+	"devDependencies": {
+		"axios": "1.6.0",
+		"chai": "5.2.0",
+		"mocha": "11.4.0"
+	},
+	"keywords": [
+		"mcp",
+		"model-context-protocol",
+		"testing",
+		"mock"
+	],
+	"author": "Rikki Tripp - Trippnology",
+	"license": "MIT",
+	"homepage": "https://github.com/trippnology/mcp-server-hello-world",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/trippnology/mcp-server-hello-world.git"
+	},
+	"bugs": {
+		"url": "https://github.com/trippnology/mcp-server-hello-world/issues"
+	},
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	}
+}
