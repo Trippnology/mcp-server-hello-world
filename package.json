@@ -1,6 +1,6 @@
 {
 	"name": "@trippnology/mcp-server-hello-world",
-	"version": "1.0.0",
+	"version": "1.0.3",
 	"description": "A NodeJS implementation of a Model Context Protocol (MCP) Hello World server, primarily intended for testing and development purposes.",
 	"main": "stdio-server.js",
 	"engines": {
