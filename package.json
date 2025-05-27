@@ -3,6 +3,7 @@
 	"version": "1.0.1",
 	"description": "A NodeJS implementation of a Model Context Protocol (MCP) Hello World server, primarily intended for testing and development purposes.",
 	"main": "stdio-server.js",
+	"private": "false",
 	"engines": {
 		"node": ">=16.0.0"
 	},
