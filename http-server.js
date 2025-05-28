@@ -11,9 +11,13 @@ class HTTPMCPServer {
 	}
 
 	async init() {
+		const port = process.env.MCP_PORT || 3000;
+		const host = process.env.MCP_HOST || 'localhost';
+		const verbose = process.env.MCP_VERBOSE === 'true';
+
 		this.server = Hapi.server({
-			port: 3000,
-			host: 'localhost',
+			port,
+			host,
 			routes: {
 				cors: {
 					origin: ['*'],

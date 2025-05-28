@@ -11,8 +11,12 @@
 		"start:http": "node http-server.js",
 		"test": "mocha test/**/*.test.js"
 	},
+	"bin": {
+		"mcp-hello-world": "./bin/cli.js"
+	},
 	"dependencies": {
-		"@hapi/hapi": "21.4.0"
+		"@hapi/hapi": "21.4.0",
+		"commander": "14.0.0"
 	},
 	"devDependencies": {
 		"axios": "1.9.0",

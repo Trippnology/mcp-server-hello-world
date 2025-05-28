@@ -394,7 +394,7 @@ Retrieve a specific prompt by name.
 
 ## HTTP Server Endpoints
 
-When running in HTTP mode (`node http-server.js`), the server provides these REST endpoints:
+When running in HTTP mode (`mcp-hello-world --mode http`), the server provides these REST endpoints:
 
 ### `GET /health`
 
@@ -500,7 +500,14 @@ const getResourceRequest = {
 ```javascript
 const { spawn } = require('child_process');
 
-const server = spawn('node', ['stdio-server.js']);
+// When installed as dev dependency
+const server = spawn('./node_modules/.bin/mcp-hello-world', [
+	'--mode',
+	'stdio',
+]);
+
+// When installed globally
+// const server = spawn('mcp-hello-world', ['--mode', 'stdio']);
 
 // Send MCP request
 const request = {
@@ -524,6 +531,9 @@ server.stdout.on('data', (data) => {
 ```javascript
 const axios = require('axios');
 
+// Start server: npx @trippnology/mcp-server-hello-world --mode http
+// Or: mcp-hello-world --mode http --port 3000
+
 const request = {
 	jsonrpc: '2.0',
 	id: 1,
@@ -534,5 +544,51 @@ const request = {
 axios.post('http://localhost:3000/messages', request).then((response) => {
 	console.log(response.data);
 	// Output: { jsonrpc: '2.0', id: 1, result: { data: 'Hello World!' } }
+});
+```
+
+### Integration in Test Suites
+
+```javascript
+// In your test setup (e.g., Jest, Mocha)
+const { spawn } = require('child_process');
+
+describe('MCP Integration Tests', () => {
+	let mcpServer;
+
+	beforeAll(async () => {
+		// Start MCP server for testing
+		mcpServer = spawn('npx', [
+			'@trippnology/mcp-server-hello-world',
+			'--mode',
+			'stdio',
+		]);
+
+		// Wait for server to be ready
+		await new Promise((resolve) => setTimeout(resolve, 1000));
+	});
+
+	afterAll(() => {
+		if (mcpServer) {
+			mcpServer.kill();
+		}
+	});
+
+	test('should echo message', (done) => {
+		const request = {
+			jsonrpc: '2.0',
+			id: 1,
+			method: 'tools/invoke',
+			params: { name: 'echo', parameters: { message: 'test' } },
+		};
+
+		mcpServer.stdin.write(JSON.stringify(request) + '\n');
+
+		mcpServer.stdout.once('data', (data) => {
+			const response = JSON.parse(data.toString());
+			expect(response.result.content[0].text).toBe('Hello test');
+			done();
+		});
+	});
 });
 ```
