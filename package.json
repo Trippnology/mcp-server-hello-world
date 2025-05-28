@@ -1,6 +1,6 @@
 {
 	"name": "@trippnology/mcp-server-hello-world",
-	"version": "1.0.3",
+	"version": "1.1.0",
 	"description": "A NodeJS implementation of a Model Context Protocol (MCP) Hello World server, primarily intended for testing and development purposes.",
 	"main": "stdio-server.js",
 	"engines": {
@@ -11,8 +11,12 @@
 		"start:http": "node http-server.js",
 		"test": "mocha test/**/*.test.js"
 	},
+	"bin": {
+		"mcp-hello-world": "./bin/cli.js"
+	},
 	"dependencies": {
-		"@hapi/hapi": "21.4.0"
+		"@hapi/hapi": "21.4.0",
+		"commander": "14.0.0"
 	},
 	"devDependencies": {
 		"axios": "1.9.0",
