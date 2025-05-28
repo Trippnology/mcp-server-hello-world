@@ -244,7 +244,7 @@ List all available tools.
 }
 ```
 
-### `tools/invoke`
+### `tools/call`
 
 Invoke a specific tool with parameters.
 
@@ -254,7 +254,7 @@ Invoke a specific tool with parameters.
 {
 	"jsonrpc": "2.0",
 	"id": 1,
-	"method": "tools/invoke",
+	"method": "tools/call",
 	"params": {
 		"name": "echo",
 		"parameters": {
@@ -287,7 +287,7 @@ Invoke a specific tool with parameters.
 {
 	"jsonrpc": "2.0",
 	"id": 1,
-	"method": "tools/invoke",
+	"method": "tools/call",
 	"params": {
 		"name": "debug",
 		"parameters": {}
@@ -473,7 +473,7 @@ const listToolsRequest = {
 const invokeEchoRequest = {
 	jsonrpc: '2.0',
 	id: 3,
-	method: 'tools/invoke',
+	method: 'tools/call',
 	params: {
 		name: 'echo',
 		parameters: {
@@ -513,7 +513,7 @@ const server = spawn('./node_modules/.bin/mcp-hello-world', [
 const request = {
 	jsonrpc: '2.0',
 	id: 1,
-	method: 'tools/invoke',
+	method: 'tools/call',
 	params: { name: 'echo', parameters: { message: 'test' } },
 };
 
@@ -578,7 +578,7 @@ describe('MCP Integration Tests', () => {
 		const request = {
 			jsonrpc: '2.0',
 			id: 1,
-			method: 'tools/invoke',
+			method: 'tools/call',
 			params: { name: 'echo', parameters: { message: 'test' } },
 		};
 
