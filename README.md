@@ -4,6 +4,31 @@ A lightweight NodeJS implementation of a Model Context Protocol (MCP) Hello Worl
 
 Inspired by [mcp-hello-world](https://github.com/lobehub/mcp-hello-world/), but much more lightweight (~17MB vs 1GB+).
 
+## Features
+
+**Complete MCP Protocol Support** with resources, tools, and prompts:
+
+- **Resources**: Static and dynamic data sources
+
+    - `hello://world` - Returns "Hello World!"
+    - `greeting://{name}` - Returns personalized greeting
+
+- **Tools**: Invokable functions
+
+    - `echo` - Echoes input with "Hello " prefix
+    - `debug` - Lists all available MCP capabilities
+
+- **Prompts**: Predefined conversation templates
+    - `helpful-assistant` - Basic assistant prompt
+
+**Communication Modes**:
+
+- **STDIO**: Direct process communication for MCP clients
+- **HTTP/SSE**: REST endpoints with Server-Sent Events (starts at `http://localhost:3000`)
+    - `/health` - Health check endpoint
+    - `/messages` - HTTP POST endpoint for MCP messages
+    - `/sse` - Server-Sent Events endpoint
+
 ## Installation
 
 ### As Development Dependency (Recommended)
@@ -62,41 +87,20 @@ mcp-hello-world --mode http --port 3000
 
 Add these scripts to your `package.json` for easy testing:
 
-````json
+```json
 {
-  "scripts": {
-    "mcp:stdio": "mcp-hello-world --mode stdio",
-    "mcp:http": "mcp-hello-world --mode http --port 3001"
-  }
+	"scripts": {
+		"mcp:stdio": "mcp-hello-world --mode stdio",
+		"mcp:http": "mcp-hello-world --mode http --port 3001"
+	}
 }
-
-## Features
-
-**Complete MCP Protocol Support** with resources, tools, and prompts:
-
-- **Resources**: Static and dynamic data sources
-  - `hello://world` - Returns "Hello World!"
-  - `greeting://{name}` - Returns personalized greeting
-
-- **Tools**: Invokable functions
-  - `echo` - Echoes input with "Hello " prefix
-  - `debug` - Lists all available MCP capabilities
-
-- **Prompts**: Predefined conversation templates
-  - `helpful-assistant` - Basic assistant prompt
-
-**Communication Modes**:
-- **STDIO**: Direct process communication for MCP clients
-- **HTTP/SSE**: REST endpoints with Server-Sent Events (starts at `http://localhost:3000`)
-  - `/health` - Health check endpoint
-  - `/messages` - HTTP POST endpoint for MCP messages
-  - `/sse` - Server-Sent Events endpoint
+```
 
 ## Testing
 
 ```bash
 npm test
-````
+```
 
 ## Documentation
 
