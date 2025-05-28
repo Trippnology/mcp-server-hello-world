@@ -137,7 +137,7 @@ class MCPServer {
 						})),
 					});
 
-				case 'tools/invoke':
+				case 'tools/call':
 					return this.handleToolInvoke(id, params);
 
 				case 'prompts/list':

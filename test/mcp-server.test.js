@@ -133,7 +133,7 @@ describe('Core MCP Server', () => {
 			const request = {
 				jsonrpc: '2.0',
 				id: 1,
-				method: 'tools/invoke',
+				method: 'tools/call',
 				params: {
 					name: 'echo',
 					parameters: { message: 'test message' },
@@ -155,7 +155,7 @@ describe('Core MCP Server', () => {
 			const request = {
 				jsonrpc: '2.0',
 				id: 1,
-				method: 'tools/invoke',
+				method: 'tools/call',
 				params: { name: 'debug', parameters: {} },
 			};
 
@@ -174,7 +174,7 @@ describe('Core MCP Server', () => {
 			const request = {
 				jsonrpc: '2.0',
 				id: 1,
-				method: 'tools/invoke',
+				method: 'tools/call',
 				params: { name: 'nonexistent', parameters: {} },
 			};
 

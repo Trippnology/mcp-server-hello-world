@@ -116,7 +116,7 @@ describe('STDIO MCP Server', () => {
 	it('should handle debug tool via STDIO', async () => {
 		const request = {
 			jsonrpc: '2.0',
-			method: 'tools/invoke',
+			method: 'tools/call',
 			params: { name: 'debug', parameters: {} },
 		};
 
@@ -181,7 +181,7 @@ describe('STDIO MCP Server', () => {
 	it('should handle error for non-existent tool via STDIO', async () => {
 		const request = {
 			jsonrpc: '2.0',
-			method: 'tools/invoke',
+			method: 'tools/call',
 			params: { name: 'nonexistent', parameters: {} },
 		};
 
@@ -253,7 +253,7 @@ describe('STDIO MCP Server', () => {
 		const request = {
 			jsonrpc: '2.0',
 			id: 9,
-			method: 'tools/invoke',
+			method: 'tools/call',
 			params: { name: 'echo', parameters: { message: 'STDIO test' } },
 		};
 

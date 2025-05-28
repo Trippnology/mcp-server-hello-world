@@ -67,7 +67,7 @@ describe('HTTP MCP Server', () => {
 			const mcpRequest = {
 				jsonrpc: '2.0',
 				id: 2,
-				method: 'tools/invoke',
+				method: 'tools/call',
 				params: { name: 'echo', parameters: { message: 'HTTP test' } },
 			};
 
