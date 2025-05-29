@@ -168,7 +168,7 @@ describe('STDIO MCP Server', () => {
 	it('should handle dynamic greeting resource via STDIO', async () => {
 		const request = {
 			jsonrpc: '2.0',
-			method: 'resources/get',
+			method: 'resources/read',
 			params: { uri: 'greeting://Charlie' },
 		};
 
@@ -272,7 +272,7 @@ describe('STDIO MCP Server', () => {
 		const request = {
 			jsonrpc: '2.0',
 			id: 10,
-			method: 'resources/get',
+			method: 'resources/read',
 			params: { uri: 'hello://world' },
 		};
 
