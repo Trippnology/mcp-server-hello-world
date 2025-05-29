@@ -90,7 +90,7 @@ describe('HTTP MCP Server', () => {
 			const mcpRequest = {
 				jsonrpc: '2.0',
 				id: 3,
-				method: 'resources/get',
+				method: 'resources/read',
 				params: { uri: 'greeting://Bob' },
 			};
 

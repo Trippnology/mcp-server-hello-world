@@ -125,7 +125,7 @@ class MCPServer {
 						),
 					});
 
-				case 'resources/get':
+				case 'resources/read':
 					return this.handleResourceGet(id, params);
 
 				case 'tools/list':

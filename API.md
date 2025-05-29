@@ -132,7 +132,7 @@ List all available resources.
 }
 ```
 
-### `resources/get`
+### `resources/read`
 
 Retrieve a specific resource by URI.
 
@@ -142,7 +142,7 @@ Retrieve a specific resource by URI.
 {
 	"jsonrpc": "2.0",
 	"id": 1,
-	"method": "resources/get",
+	"method": "resources/read",
 	"params": {
 		"uri": "hello://world"
 	}
@@ -167,7 +167,7 @@ Retrieve a specific resource by URI.
 {
 	"jsonrpc": "2.0",
 	"id": 1,
-	"method": "resources/get",
+	"method": "resources/read",
 	"params": {
 		"uri": "greeting://Alice"
 	}
@@ -486,7 +486,7 @@ const invokeEchoRequest = {
 const getResourceRequest = {
 	jsonrpc: '2.0',
 	id: 4,
-	method: 'resources/get',
+	method: 'resources/read',
 	params: {
 		uri: 'greeting://Developer',
 	},
@@ -537,7 +537,7 @@ const axios = require('axios');
 const request = {
 	jsonrpc: '2.0',
 	id: 1,
-	method: 'resources/get',
+	method: 'resources/read',
 	params: { uri: 'greeting://World' },
 };
 

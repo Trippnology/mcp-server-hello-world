@@ -63,7 +63,7 @@ describe('Core MCP Server', () => {
 			const request = {
 				jsonrpc: '2.0',
 				id: 1,
-				method: 'resources/get',
+				method: 'resources/read',
 				params: { uri: 'hello://world' },
 			};
 
@@ -80,7 +80,7 @@ describe('Core MCP Server', () => {
 			const request = {
 				jsonrpc: '2.0',
 				id: 1,
-				method: 'resources/get',
+				method: 'resources/read',
 				params: { uri: 'greeting://Alice' },
 			};
 
@@ -97,7 +97,7 @@ describe('Core MCP Server', () => {
 			const request = {
 				jsonrpc: '2.0',
 				id: 1,
-				method: 'resources/get',
+				method: 'resources/read',
 				params: { uri: 'nonexistent://resource' },
 			};
 
