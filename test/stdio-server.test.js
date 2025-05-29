@@ -117,7 +117,7 @@ describe('STDIO MCP Server', () => {
 		const request = {
 			jsonrpc: '2.0',
 			method: 'tools/call',
-			params: { name: 'debug', parameters: {} },
+			params: { name: 'debug', arguments: {} },
 		};
 
 		const response = await sendRequest(request);
@@ -182,7 +182,7 @@ describe('STDIO MCP Server', () => {
 		const request = {
 			jsonrpc: '2.0',
 			method: 'tools/call',
-			params: { name: 'nonexistent', parameters: {} },
+			params: { name: 'nonexistent', arguments: {} },
 		};
 
 		const response = await sendRequest(request);
@@ -254,7 +254,7 @@ describe('STDIO MCP Server', () => {
 			jsonrpc: '2.0',
 			id: 9,
 			method: 'tools/call',
-			params: { name: 'echo', parameters: { message: 'STDIO test' } },
+			params: { name: 'echo', arguments: { message: 'STDIO test' } },
 		};
 
 		const response = await sendRequest(request);
