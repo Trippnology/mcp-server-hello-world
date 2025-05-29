@@ -68,7 +68,7 @@ describe('HTTP MCP Server', () => {
 				jsonrpc: '2.0',
 				id: 2,
 				method: 'tools/call',
-				params: { name: 'echo', parameters: { message: 'HTTP test' } },
+				params: { name: 'echo', arguments: { message: 'HTTP test' } },
 			};
 
 			const response = await axios.post(

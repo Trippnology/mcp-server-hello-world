@@ -136,7 +136,7 @@ describe('Core MCP Server', () => {
 				method: 'tools/call',
 				params: {
 					name: 'echo',
-					parameters: { message: 'test message' },
+					arguments: { message: 'test message' },
 				},
 			};
 
@@ -156,7 +156,7 @@ describe('Core MCP Server', () => {
 				jsonrpc: '2.0',
 				id: 1,
 				method: 'tools/call',
-				params: { name: 'debug', parameters: {} },
+				params: { name: 'debug', arguments: {} },
 			};
 
 			const response = server.handleRequest(request);
@@ -175,7 +175,7 @@ describe('Core MCP Server', () => {
 				jsonrpc: '2.0',
 				id: 1,
 				method: 'tools/call',
-				params: { name: 'nonexistent', parameters: {} },
+				params: { name: 'nonexistent', arguments: {} },
 			};
 
 			const response = server.handleRequest(request);

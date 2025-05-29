@@ -186,14 +186,14 @@ class MCPServer {
 	}
 
 	handleToolInvoke(id, params) {
-		const { name, parameters } = params;
-		const tool = this.tools.get(name);
+		//const { name, arguments } = params;
+		const tool = this.tools.get(params.name);
 
 		if (!tool) {
 			return this.createErrorResponse(id, -32602, 'Tool not found');
 		}
 
-		return this.createResponse(id, tool.handler(parameters || {}));
+		return this.createResponse(id, tool.handler(params.arguments || {}));
 	}
 
 	handlePromptGet(id, params) {
